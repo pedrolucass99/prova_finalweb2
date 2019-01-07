@@ -17,7 +17,7 @@ class DoctorController extends Controller
     public function index()
     {
         $doctors = Doctor::all();
-        return view('Doctor/doctor', compact('doctors'));
+        return view('doctor/doctor', compact('doctors'));
     }
 
     /**
@@ -27,11 +27,11 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('Doctor/new_doctor');
+        return view('doctor/new_doctor');
     }
 
     public function pesquisa(){
-        return view('Doctor/pesquisa');
+        return view('doctor/pesquisa');
     }
 
     public function pesquisaDoutor(Request $request){
@@ -39,7 +39,7 @@ class DoctorController extends Controller
         //$doctors = DB::table('doctors')->Where('name', 'LIKE', '%' . $nome . '%')->get();
         
         $doctors = Doctor::Where('name', 'LIKE', '%' . $nome . '%')->get();
-        return view('Doctor/pesquisa', compact('doctors'));
+        return view('doctor/pesquisa', compact('doctors'));
     }
 
     /**
@@ -68,7 +68,7 @@ class DoctorController extends Controller
     {
         $doctor = Doctor::find($id);
         $consultas = Appointment::all();
-        return view('Doctor/consultas', compact('consultas'), compact('doctor'));
+        return view('doctor/consultas', compact('consultas'), compact('doctor'));
     }
 
     /**
@@ -80,7 +80,7 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $doctor = Doctor::find($id);
-        return view('Doctor/edit_doctor', compact('doctor'));
+        return view('doctor/edit_doctor', compact('doctor'));
     }
 
     /**

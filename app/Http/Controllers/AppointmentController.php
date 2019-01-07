@@ -33,7 +33,7 @@ class AppointmentController extends Controller
 
     public function consultaIndividual($id){
         $consultas = Appointment::all();    
-        return view('Consulta/minha_consulta', compact('consultas'));
+        return view('consulta/minha_consulta', compact('consultas'));
     }
     /**
      * Store a newly created resource in storage.
@@ -74,7 +74,7 @@ class AppointmentController extends Controller
     {
         $consulta = Appointment::find($id);
         $doctors = Doctor::all();
-        return view('Consulta/edit_consulta', compact('consulta'), compact('doctors'));
+        return view('consulta/edit_consulta', compact('consulta'), compact('doctors'));
     }
 
     /**

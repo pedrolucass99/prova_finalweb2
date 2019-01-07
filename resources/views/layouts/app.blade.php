@@ -53,7 +53,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                    <a class="nav-link" href="consultaIndividual/{{Auth::id()}}">Minhas Consultas</a>
+                                    <a class="nav-link" href="{{url('consultaIndividual')}}/{{Auth::id()}}">Minhas Consultas</a>
                             </li>
 
                              <li class="nav-item">
